@@ -1,0 +1,37 @@
+.garden {
+  position: relative;
+  width : 200px;
+  height: 200px;
+  border: 5px solid #CCC;
+  border-radius: 10px;
+}
+
+#b1 {
+  position: absolute;
+  top   : 45px;
+  left  : 90px;
+  width : 20px;
+  height: 20px;
+  background: red;
+  border-radius: 100%;
+}
+
+#b2 {
+  position: absolute;
+  top   : 90px;
+  left  : 90px;
+  width : 20px;
+  height: 20px;
+  background: orange;
+  border-radius: 100%;
+}
+
+#b3 {
+  position: absolute;
+  top   : 135px;
+  left  : 90px;
+  width : 20px;
+  height: 20px;
+  background: green;
+  border-radius: 100%;
+}
