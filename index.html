@@ -70,13 +70,12 @@
 
     balls.forEach(
       function(currentValue, currentIndex, listObj) {
-        console.log(currentValue + ', ' + currentIndex + ', ' + this);
-      },
-      'myThisArg'
+        console.log(currentValue + ', ' + currentIndex);
+      }
     );
 
     console.log("b1: "+ball1.clientHeight+"\n"+"b2: "+ball2.clientHeight+"\n"+"b3: "+ball3.clientHeight+"\n");
-
+console.log("b1w: "+ball1.clientWidth+"\n"+"b2w: "+ball2.clientWidth+"\n"+"b3w: "+ball3.clientWidth+"\n");
 
     function handleOrientation(event) {
 
