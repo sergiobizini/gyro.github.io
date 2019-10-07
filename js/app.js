@@ -13,7 +13,7 @@ output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
 var maxX = garden.clientWidth  - ball1.clientWidth;
 var maxY = garden.clientHeight - ball1.clientHeight;
 
-if (window.DeviceOrientationEvent){
+// if (window.DeviceOrientationEvent){
 window.addEventListener("deviceorientation",function(event) {
 //Rotation around Z-axis
   var rotateDegrees = event.alpha;
@@ -24,7 +24,7 @@ var frontToBack = event.beta;
 
 handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
 },true);
-}
+// }
 
 var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
   output.innerHTML  = "alpha : " + rotateDegrees + "\n";
