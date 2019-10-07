@@ -2,7 +2,7 @@ var balls   = document.querySelectorAll('.ball');
 
 var ball1 = document.querySelector('#b1');
 var ball2 = document.querySelector('#b2');
-var ball3 = document.querySelector('#b3');
+//var ball3 = document.querySelector('#b3');
 
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
