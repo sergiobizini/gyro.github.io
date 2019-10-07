@@ -10,6 +10,8 @@ var output = document.querySelector('.output');
 output.innerHTML += "typo SelectorAll balls: " + typeof balls + "\n";
 output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
 
+var maxX = garden.clientWidth  - ball.clientWidth;
+var maxY = garden.clientHeight - ball.clientHeight;
 
 
 
@@ -22,8 +24,6 @@ output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
   balls.forEach((ball) => {
   ball.addEventListener('deviceorientation', () => {
     // function(ball, currentIndex, listObj) {
-    var maxX = garden.clientWidth  - ball.clientWidth;
-    var maxY = garden.clientHeight - ball.clientHeight;
 
 
 var x = event.beta;  // In degree in the range [-180,180]
