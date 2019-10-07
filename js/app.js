@@ -18,9 +18,10 @@ var maxY = garden.clientHeight - ball1.clientHeight;
 //     console.log("b1: "+ball1.clientHeight+"\n"+"b2: "+ball2.clientHeight+"\n"+"b3: "+ball3.clientHeight+"\n");
 // console.log("b1w: "+ball1.clientWidth+"\n"+"b2w: "+ball2.clientWidth+"\n"+"b3w: "+ball3.clientWidth+"\n");
 
-function handleOrientation(event) {
+// function handleOrientation(event) {
 
-  [].forEach.call(balls, function(ball) {
+  balls.forEach((ball) => {
+  button.addEventListener('deviceorientation', () => {
     // function(ball, currentIndex, listObj) {
 
 
@@ -50,6 +51,6 @@ ball.style.left = (maxY*y/180 - 10) + "px";
       // output.innerHTML += "typo ball: " + typeof ball + "\n";
     }
   );
-}
+});
 
- window.addEventListener('deviceorientation', handleOrientation);
+// window.addEventListener('deviceorientation', handleOrientation);
