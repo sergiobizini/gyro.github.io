@@ -18,8 +18,10 @@ function handleOrientation(event) {
   output.innerHTML  = "beta : " + x + "\n";
   output.innerHTML += "gamma: " + y + "\n";
   output.innerHTML += "alpha: " + event.alpha + "\n";
-  output.innerHTML += "ball1: " + balls[1] + "ball2: " + balls[2] +"ball3: " + balls[3] +"\n";
-  
+  output.innerHTML += "ball1: " + balls[0] + "ball2: " + balls[1] +"ball3: " + balls[2] +"\n";
+  output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
+  output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
+  output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
