@@ -55,13 +55,18 @@
 
     <script type="text/javascript">
     var balls   = document.querySelectorAll('.ball');
+
+    var ball1 = document.querySelector('#b1');
+    var ball2 = document.querySelector('#b2');
+    var ball3 = document.querySelector('#b3');
+
     var garden = document.querySelector('.garden');
     var output = document.querySelector('.output');
 
     output.innerHTML += "typo SelectorAll: " + typeof balls + "\n";
 
-    var maxX = garden.clientWidth  - ball.clientWidth;
-    var maxY = garden.clientHeight - ball.clientHeight;
+    //var maxX = garden.clientWidth  - ball.clientWidth;
+    //var maxY = garden.clientHeight - ball.clientHeight;
 
     balls.forEach(
       function(currentValue, currentIndex, listObj) {
@@ -69,6 +74,9 @@
       },
       'myThisArg'
     );
+
+    console.log("b1: "+ball1.clientHeight+"\n"+"b2: "+ball2.clientHeight+"\n"+"b3: "+ball3.clientHeight+"\n");
+
 
     function handleOrientation(event) {
 
@@ -97,7 +105,7 @@
           //});
     }
 
-    window.addEventListener('deviceorientation', handleOrientation);
+  //  window.addEventListener('deviceorientation', handleOrientation);
 
     </script>
   <!--  <script src="js/app.js"></script>-->
