@@ -8,7 +8,7 @@ var output = document.querySelector('.output');
 function handleOrientation(event) {
 
 
-  for (i = 0; i < balls.length; ++i) {
+  for (i = 0; i < balls.length; i++) {
 
   var maxX = garden.clientWidth  - balls[i].clientWidth;
   var maxY = garden.clientHeight - balls[i].clientHeight;
@@ -18,6 +18,8 @@ function handleOrientation(event) {
   output.innerHTML  = "beta : " + x + "\n";
   output.innerHTML += "gamma: " + y + "\n";
   output.innerHTML += "alpha: " + event.alpha + "\n";
+  output.innerHTML += "ball1: " + balls[1] + "ball2: " + balls[2] +"ball3: " + balls[3] +"\n";
+  
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
