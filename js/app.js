@@ -20,7 +20,7 @@ output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
 // function handleOrientation(event) {
 
   balls.forEach((ball) => {
-  button.addEventListener('deviceorientation', () => {
+  ball.addEventListener('deviceorientation', () => {
     // function(ball, currentIndex, listObj) {
     var maxX = garden.clientWidth  - ball.clientWidth;
     var maxY = garden.clientHeight - ball.clientHeight;
