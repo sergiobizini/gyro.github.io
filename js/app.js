@@ -20,8 +20,8 @@ var maxY = garden.clientHeight - ball1.clientHeight;
 
 function handleOrientation(event) {
 
-  balls.forEach(
-    function(ball, currentIndex, listObj) {
+  [].forEach.call(balls, function(ball) {
+    // function(ball, currentIndex, listObj) {
 
 
 
