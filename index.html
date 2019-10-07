@@ -65,19 +65,18 @@
 
     output.innerHTML += "typo SelectorAll: " + typeof balls + "\n";
 
-    //var maxX = garden.clientWidth  - ball.clientWidth;
-    //var maxY = garden.clientHeight - ball.clientHeight;
+    var maxX = garden.clientWidth  - ball1.clientWidth;
+    var maxY = garden.clientHeight - ball1.clientHeight;
 
-    balls.forEach(
-      function(currentValue, currentIndex, listObj) {
-        console.log(currentValue + ', ' + currentIndex);
-      }
-    );
 
-    console.log("b1: "+ball1.clientHeight+"\n"+"b2: "+ball2.clientHeight+"\n"+"b3: "+ball3.clientHeight+"\n");
-console.log("b1w: "+ball1.clientWidth+"\n"+"b2w: "+ball2.clientWidth+"\n"+"b3w: "+ball3.clientWidth+"\n");
+
+//     console.log("b1: "+ball1.clientHeight+"\n"+"b2: "+ball2.clientHeight+"\n"+"b3: "+ball3.clientHeight+"\n");
+// console.log("b1w: "+ball1.clientWidth+"\n"+"b2w: "+ball2.clientWidth+"\n"+"b3w: "+ball3.clientWidth+"\n");
 
     function handleOrientation(event) {
+
+      balls.forEach(
+        function(ball, currentIndex, listObj) {
 
 
       //balls.forEach(function(ball) {
@@ -102,6 +101,9 @@ console.log("b1w: "+ball1.clientWidth+"\n"+"b2w: "+ball2.clientWidth+"\n"+"b3w: 
     ball.style.top  = (maxX*x/180 - 10) + "px";
     ball.style.left = (maxY*y/180 - 10) + "px";
           //});
+          //console.log(currentValue + ', ' + currentIndex);
+        }
+      );
     }
 
   //  window.addEventListener('deviceorientation', handleOrientation);
