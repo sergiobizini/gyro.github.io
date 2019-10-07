@@ -63,7 +63,8 @@
     var garden = document.querySelector('.garden');
     var output = document.querySelector('.output');
 
-    output.innerHTML += "typo SelectorAll: " + typeof balls + "\n";
+    output.innerHTML += "typo SelectorAll balls: " + typeof balls + "\n";
+    output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
 
     var maxX = garden.clientWidth  - ball1.clientWidth;
     var maxY = garden.clientHeight - ball1.clientHeight;
@@ -101,7 +102,8 @@
     ball.style.top  = (maxX*x/180 - 10) + "px";
     ball.style.left = (maxY*y/180 - 10) + "px";
           //});
-          //console.log(currentValue + ', ' + currentIndex);
+          console.log(ball + ', ' + currentIndex);
+          output.innerHTML += "typo ball: " + typeof ball + "\n";
         }
       );
     }
