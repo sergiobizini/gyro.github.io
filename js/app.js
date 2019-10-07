@@ -24,7 +24,7 @@ function handleOrientation(event) {
     function(ball, currentIndex, listObj) {
 
 
-  //balls.forEach(function(ball) {
+
 var x = event.beta;  // In degree in the range [-180,180]
 var y = event.gamma; // In degree in the range [-90,90]
 
@@ -43,11 +43,11 @@ y += 90;
 
 // 10 is half the size of the ball
 // It center the positioning point to the center of the ball
-ball.style.top  = (maxX*x/180 - 10) + "px";
-ball.style.left = (maxY*y/180 - 10) + "px";
-      //});
-      console.log(ball + ', ' + currentIndex);
-      output.innerHTML += "typo ball: " + typeof ball + "\n";
+ball1.style.top  = (maxX*x/180 - 10) + "px";
+ball1.style.left = (maxY*y/180 - 10) + "px";
+
+      // console.log(ball + ', ' + currentIndex);
+      // output.innerHTML += "typo ball: " + typeof ball + "\n";
     }
   );
 }
