@@ -1,5 +1,5 @@
 var ball   = document.querySelector('#b1');
-var balls = document.querySelectorAll('.ball');
+var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
 
@@ -7,8 +7,11 @@ var output = document.querySelector('.output');
 
 function handleOrientation(event) {
 
-  var maxX = garden.clientWidth  - ball.clientWidth;
-  var maxY = garden.clientHeight - ball.clientHeight;
+
+  for (i = 0; i < balls.length; ++i) {
+
+  var maxX = garden.clientWidth  - balls[i].clientWidth;
+  var maxY = garden.clientHeight - balls[i].clientHeight;
   var x = event.beta;  // In degree in the range [-180,180]
   var y = event.gamma; // In degree in the range [-90,90]
 
@@ -28,8 +31,9 @@ function handleOrientation(event) {
 
   // 10 is half the size of the ball
   // It center the positioning point to the center of the ball
-  ball.style.top  = (maxX*x/180 - 10) + "px";
-  ball.style.left = (maxY*y/180 - 10) + "px";
+  balls[i].style.top  = (maxX*x/180 - 10) + "px";
+  balls[i].style.left = (maxY*y/180 - 10) + "px";
+    }
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
