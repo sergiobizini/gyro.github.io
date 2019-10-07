@@ -10,8 +10,8 @@ var output = document.querySelector('.output');
 output.innerHTML += "typo SelectorAll balls: " + typeof balls + "\n";
 output.innerHTML += "typo ball1: " + typeof balls1 + "\n";
 
-var maxX = garden.clientWidth  - ball.clientWidth;
-var maxY = garden.clientHeight - ball.clientHeight;
+var maxX = garden.clientWidth  - ball1.clientWidth;
+var maxY = garden.clientHeight - ball1.clientHeight;
 
 if (window.DeviceOrientationEvent){
 window.addEventListener("deviceorientation",function(event) {
