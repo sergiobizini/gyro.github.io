@@ -22,7 +22,7 @@ function handleOrientation(event) {
   // output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
   // output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
-  output.innerHTML  = "3: "+"\n";
+  output.innerHTML  = "4: "+"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
@@ -39,7 +39,7 @@ function handleOrientation(event) {
   // balls[i].style.top  = (maxX*x/180 - 10) + (i-1)*45 + "px";
   // balls[i].style.left = (maxY*y/180 - 10) + "px";
   balls[i].style.top  = balls[i].style.top.substring(0,balls[i].style.top.length-2) + maxX*x/90 + "px";
-  balls[i].style.left = (maxY*y/180 - 10) + "px";
+  balls[i].style.left = (maxY*y/180 + 80) + "px";
     }
 }
 
