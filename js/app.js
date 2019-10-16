@@ -2,14 +2,18 @@ var ball   = document.querySelector('#b1');
 var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
-var maxX = garden.clientWidth  - balls[i].clientWidth;
-var maxY = garden.clientHeight - balls[i].clientHeight;
-var speed =  0.1;
+
 
 function handleOrientation(event) {
 
 
   for (i = 0; i < balls.length; i++) {
+
+
+  var maxX = garden.clientWidth  - balls[i].clientWidth;
+  var maxY = garden.clientHeight - balls[i].clientHeight;
+  var speed =  0.1;
+
 
   var y = event.beta;  // In degree in the range [-180,180]    up down
   var x = event.gamma; // In degree in the range [-90,90]      left right
