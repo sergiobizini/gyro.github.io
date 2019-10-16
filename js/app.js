@@ -17,12 +17,13 @@ function handleOrientation(event) {
 
   output.innerHTML  = "top : " + balls[i].style.top.match(/[\d\.]+/) + "\n";
   output.innerHTML += "left: " + balls[i].style.left.match(/[\d\.]+/) + "\n";
+    output.innerHTML += "left: " + balls[i].style.offsetLeft + "\n";
   // output.innerHTML += "alpha: " + event.alpha + "\n";
   // output.innerHTML += "ball1: " + balls[0] + "ball2: " + balls[1] +"ball3: " + balls[2] +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
   // output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
-  output.innerHTML  += "9: "+"\n";
+  output.innerHTML  += "10: "+"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
