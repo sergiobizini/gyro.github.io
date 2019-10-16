@@ -2,18 +2,17 @@ var ball   = document.querySelector('#b1');
 var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
-
-
+var maxX = garden.clientWidth  - balls[i].clientWidth;
+var maxY = garden.clientHeight - balls[i].clientHeight;
+var speed =  0.1;
 
 function handleOrientation(event) {
 
 
   for (i = 0; i < balls.length; i++) {
 
-  var maxX = garden.clientWidth  - balls[i].clientWidth;
-  var maxY = garden.clientHeight - balls[i].clientHeight;
-  var x = event.beta;  // In degree in the range [-180,180]
-  var y = event.gamma; // In degree in the range [-90,90]
+  var y = event.beta;  // In degree in the range [-180,180]    up down
+  var x = event.gamma; // In degree in the range [-90,90]      left right
 
   output.innerHTML  = "top : " + y + "\n";
   output.innerHTML += "left: " + x + "\n";
@@ -22,7 +21,7 @@ function handleOrientation(event) {
   // output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
   // output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
-  output.innerHTML  += "11: "+"\n";
+  output.innerHTML  += "12: "+"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
@@ -38,11 +37,16 @@ function handleOrientation(event) {
   // It center the positioning point to the center of the ball
   // balls[i].style.top  = (maxX*x/180 - 10) + (i-1)*45 + "px";
   // balls[i].style.left = (maxY*y/180 - 10) + "px";
-  y_px = balls[i].style.top.match(/[\d\.]+/);
-  x_px = balls[i].style.left.match(/[\d\.]+/);
+  y_px = balls[i].style.top.match(/\d+/);
+  x_px = balls[i].style.left.match(/\d+/);
 
-  balls[i].style.top  = 90 + 180*x/90 + "px";  //200 -100 -5
-  balls[i].style.left = 90 + 180*y/90 + "px";
+
+  if ((speed + y_px < 180) && (speed + y_px > 0)){
+    balls[i].style.top  = y_px + y*speed + "px";  //200 -100 -5
+  }
+  if ((speed + x_px < 180) && (speed + x_px > 0)){
+    balls[i].style.left  = x_px + x*speed + "px";  //200 -100 -5
+  }
     }
 }
 
