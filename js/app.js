@@ -15,20 +15,19 @@ function handleOrientation(event) {
   var x = event.beta;  // In degree in the range [-180,180]
   var y = event.gamma; // In degree in the range [-90,90]
 
-  output.innerHTML  = "top : " + balls[i].style.top.match(/[\d\.]+/) + "\n";
-  output.innerHTML += "left: " + balls[i].style.left.match(/[\d\.]+/) + "\n";
-    output.innerHTML += "left: " + balls[i].style.offsetLeft + "\n";
+  output.innerHTML  = "top : " + y + "\n";
+  output.innerHTML += "left: " + x + "\n";
   // output.innerHTML += "alpha: " + event.alpha + "\n";
   // output.innerHTML += "ball1: " + balls[0] + "ball2: " + balls[1] +"ball3: " + balls[2] +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
   // output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
-  output.innerHTML  += "10: "+"\n";
+  output.innerHTML  += "11: "+"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
-  if (x >  90) { x =  90};
-  if (x < -90) { x = -90};
+  // if (x >  90) { x =  90};
+  // if (x < -90) { x = -90};
 
   // To make computation easier we shift the range of
   // x and y to [0,180]
@@ -39,7 +38,9 @@ function handleOrientation(event) {
   // It center the positioning point to the center of the ball
   // balls[i].style.top  = (maxX*x/180 - 10) + (i-1)*45 + "px";
   // balls[i].style.left = (maxY*y/180 - 10) + "px";
-  x_px =
+  y_px = balls[i].style.top.match(/[\d\.]+/);
+  x_px = balls[i].style.left.match(/[\d\.]+/);
+
   balls[i].style.top  = 90 + 180*x/90 + "px";  //200 -100 -5
   balls[i].style.left = 90 + 180*y/90 + "px";
     }
