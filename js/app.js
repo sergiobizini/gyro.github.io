@@ -15,14 +15,16 @@ function sleep(milliseconds){
 
 
 function handleOrientation(event) {
+  output.innerHTML = new Date().getTime() + "\n";
 
-  sleep(1000);
-  // for (i = 0; i < balls.length; i++) {
-    y_px = parseint(balls[0].style.top.match(/\d+/));
-    x_px = parseint(balls[0].style.left.match(/\d+/));
-    output.innerHTML = new Date().getTime() + "\n";
+  for (i = 0; i < balls.length; i++) {
+    y_px = (balls[i].style.top.match(/\d+/));
+    x_px = (balls[i].style.left.match(/\d+/));
+
     output.innerHTML += "x: "+x_px+"\n";
     output.innerHTML += "y: "+y_px+"\n";
+  }
+  sleep(1000);
   // var maxX = garden.clientWidth  - balls[i].clientWidth;
   // var maxY = garden.clientHeight - balls[i].clientHeight;
   // var speed =  0.5;
