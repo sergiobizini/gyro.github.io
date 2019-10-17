@@ -3,7 +3,12 @@ var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
 
+function sleep(milliseconds){
+  var start = new Date().getTime();
+  while(new Date().getTime() - start < milliseconds){
 
+  }
+}
 function handleOrientation(event) {
 
 
@@ -52,7 +57,7 @@ function handleOrientation(event) {
   // if ((speed + x_px < 180) && (speed + x_px > 0)){
   //   balls[i].style.left  = x_px + x*speed + "px";  //200 -100 -5
   // }
-  setTimeout(function(){}, 1000);
+  sleep(1000);
 
 }
 }
