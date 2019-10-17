@@ -12,10 +12,10 @@ function sleep(milliseconds){
   }
 }
 
-output.innerHTML = "2"
+
 function handleOrientation(event) {
 
-  output.innerHTML += new Date().getTime();
+  output.innerHTML = new Date().getTime();
   for (i = 0; i < balls.length; i++) {
 
 
