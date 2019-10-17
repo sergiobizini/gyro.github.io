@@ -25,14 +25,14 @@ function handleOrientation(event) {
   var y = event.beta;  // In degree in the range [-180,180]    up down
   var x = event.gamma; // In degree in the range [-90,90]      left right
 
-  output.innerHTML  = "top : " + balls[i].style.top + "\n";
-  output.innerHTML += "left: " + balls[i].style.left + "\n";
+  // output.innerHTML  = "top : " + balls[i].style.top + "\n";
+  // output.innerHTML += "left: " + balls[i].style.left + "\n";
   // output.innerHTML += "alpha: " + event.alpha + "\n";
   // output.innerHTML += "ball1: " + balls[0] + "ball2: " + balls[1] +"ball3: " + balls[2] +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientWidth + "ball2wid: " + balls[1].clientWidth+"ball3wid: " + balls[2].clientWidth +"\n";
   // output.innerHTML += "ball1wid: " + balls[0].clientHeight + "ball2wid: " + balls[1].clientHeight+"ball3wid: " + balls[2].clientHeight +"\n";
   // output.innerHTML += "gardW: " + garden.clientWidth + "gardH: " + garden.clientHeight +"\n";
-  output.innerHTML  += "2: "+"\n";
+  // output.innerHTML  += "2: "+"\n";
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
@@ -51,9 +51,12 @@ function handleOrientation(event) {
   y_px = parseint(balls[i].style.top.match(/\d+/));
   x_px = parseint(balls[i].style.left.match(/\d+/));
 
+  output.innerHTML  = "parseint(y_px + y*speed) + : " + (y_px + y*speed) + "\n";
+  output.innerHTML += "3: \n";
+
 
   if ((speed + y_px < 180) && (speed + y_px > 0)){
-    balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
+    balls[i].style.top  = (y_px + y*speed) + "px";  //200 -100 -5
   } else {
     balls[i].style.top = "180px";}
   // if ((speed + x_px < 180) && (speed + x_px > 0)){
