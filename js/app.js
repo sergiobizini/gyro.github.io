@@ -16,11 +16,10 @@ function sleep(milliseconds){
 
 function handleOrientation(event) {
 
-
   sleep(1000);
-  for (i = 0; i < balls.length; i++) {
-    y_px = parseint(balls[i].style.top.match(/\d+/));
-    x_px = parseint(balls[i].style.left.match(/\d+/));
+  // for (i = 0; i < balls.length; i++) {
+    y_px = parseint(balls[0].style.top.match(/\d+/));
+    x_px = parseint(balls[0].style.left.match(/\d+/));
     output.innerHTML = new Date().getTime() + "\n";
     output.innerHTML += "x: "+x_px+"\n";
     output.innerHTML += "y: "+y_px+"\n";
@@ -71,7 +70,7 @@ function handleOrientation(event) {
   // }
   // sleep(1000);
 
-}
+// }
 }
 
 window.addEventListener('deviceorientation', handleOrientation, true);
