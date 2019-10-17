@@ -13,17 +13,17 @@ function sleep(milliseconds){
 }
 function handleOrientation(event) {
 
-
+  output.innerHTML = new Date().getTime();
   for (i = 0; i < balls.length; i++) {
 
 
-  var maxX = garden.clientWidth  - balls[i].clientWidth;
-  var maxY = garden.clientHeight - balls[i].clientHeight;
-  var speed =  0.5;
-
-
-  var y = event.beta;  // In degree in the range [-180,180]    up down
-  var x = event.gamma; // In degree in the range [-90,90]      left right
+  // var maxX = garden.clientWidth  - balls[i].clientWidth;
+  // var maxY = garden.clientHeight - balls[i].clientHeight;
+  // var speed =  0.5;
+  //
+  //
+  // var y = event.beta;  // In degree in the range [-180,180]    up down
+  // var x = event.gamma; // In degree in the range [-90,90]      left right
 
   // output.innerHTML  = "top : " + balls[i].style.top + "\n";
   // output.innerHTML += "left: " + balls[i].style.left + "\n";
@@ -48,17 +48,17 @@ function handleOrientation(event) {
   // It center the positioning point to the center of the ball
   // balls[i].style.top  = (maxX*x/180 - 10) + (i-1)*45 + "px";
   // balls[i].style.left = (maxY*y/180 - 10) + "px";
-  y_px = parseint(balls[i].style.top.match(/\d+/));
-  x_px = parseint(balls[i].style.left.match(/\d+/));
-
-  output.innerHTML  = "parseint(y_px + y*speed) + : " + (y_px + y*speed) + "\n";
-  output.innerHTML += "3: \n";
-
-
-  if ((speed + y_px < 180) && (speed + y_px > 0)){
-    balls[i].style.top  = (y_px + y*speed) + "px";  //200 -100 -5
-  } else {
-    balls[i].style.top = "180px";}
+  // y_px = parseint(balls[i].style.top.match(/\d+/));
+  // x_px = parseint(balls[i].style.left.match(/\d+/));
+  //
+  // output.innerHTML  = "parseint(y_px + y*speed) + : " + (y_px + y*speed) + "\n";
+  // output.innerHTML += "3: \n";
+  //
+  //
+  // if ((speed + y_px < 180) && (speed + y_px > 0)){
+  //   balls[i].style.top  = (y_px + y*speed) + "px";  //200 -100 -5
+  // } else {
+  //   balls[i].style.top = "180px";}
   // if ((speed + x_px < 180) && (speed + x_px > 0)){
   //   balls[i].style.left  = x_px + x*speed + "px";  //200 -100 -5
   // }
