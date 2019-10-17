@@ -16,6 +16,7 @@ function sleep(milliseconds){
 function handleOrientation(event) {
 
   output.innerHTML = new Date().getTime();
+  sleep(1000);
   for (i = 0; i < balls.length; i++) {
 
 
@@ -69,4 +70,4 @@ function handleOrientation(event) {
 }
 }
 
-window.addEventListener('deviceorientation', handleOrientation,1);
+window.addEventListener('deviceorientation', handleOrientation, true);
