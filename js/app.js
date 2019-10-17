@@ -2,7 +2,8 @@ var ball   = document.querySelector('#b1');
 var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
-var x_px,y_px;
+var x_px;
+var y_px;
 
 
 function sleep(milliseconds){
@@ -15,11 +16,14 @@ function sleep(milliseconds){
 
 function handleOrientation(event) {
 
-  output.innerHTML = new Date().getTime();
+
   sleep(1000);
   for (i = 0; i < balls.length; i++) {
-
-
+    y_px = parseint(balls[i].style.top.match(/\d+/));
+    x_px = parseint(balls[i].style.left.match(/\d+/));
+    output.innerHTML = new Date().getTime() + "\n";
+    output.innerHTML += "x: "+x_px+"\n";
+    output.innerHTML += "y: "+y_px+"\n";
   // var maxX = garden.clientWidth  - balls[i].clientWidth;
   // var maxY = garden.clientHeight - balls[i].clientHeight;
   // var speed =  0.5;
