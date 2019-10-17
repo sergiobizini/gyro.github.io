@@ -2,6 +2,8 @@ var ball   = document.querySelector('#b1');
 var balls = document.querySelectorAll('.ball'),i;
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
+var x_px,y_px;
+
 
 function sleep(milliseconds){
   var start = new Date().getTime();
@@ -46,12 +48,12 @@ function handleOrientation(event) {
   // It center the positioning point to the center of the ball
   // balls[i].style.top  = (maxX*x/180 - 10) + (i-1)*45 + "px";
   // balls[i].style.left = (maxY*y/180 - 10) + "px";
-  y_px = balls[i].style.top.match(/\d+/);
-  x_px = balls[i].style.left.match(/\d+/);
+  y_px = parseint(balls[i].style.top.match(/\d+/));
+  x_px = parseint(balls[i].style.left.match(/\d+/));
 
 
   if ((speed + y_px < 180) && (speed + y_px > 0)){
-    balls[i].style.top  = parseint(y_px) + parseint(y*speed) + "px";  //200 -100 -5
+    balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
   } else {
     balls[i].style.top = "180px";}
   // if ((speed + x_px < 180) && (speed + x_px > 0)){
