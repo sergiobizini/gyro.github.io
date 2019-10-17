@@ -57,9 +57,9 @@ function handleOrientation(event) {
   // if ((speed + x_px < 180) && (speed + x_px > 0)){
   //   balls[i].style.left  = x_px + x*speed + "px";  //200 -100 -5
   // }
-  sleep(1000);
+  // sleep(1000);
 
 }
 }
 
-window.addEventListener('deviceorientation', handleOrientation);
+window.addEventListener('deviceorientation', handleOrientation,1);
