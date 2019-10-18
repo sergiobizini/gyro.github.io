@@ -19,7 +19,7 @@ function handleOrientation(event) {
 
   for (i = 0; i < balls.length; i++) {
     y_px = balls[i].style.top;
-    x_px = balls[i].style.left.match(/.+/);
+    x_px = balls[i].style.left;
 
     output.innerHTML += "x: " + x_px + " i: " + i + "\n";
     output.innerHTML += "y: " + y_px + ":y" +"\n";
