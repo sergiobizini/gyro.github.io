@@ -20,9 +20,9 @@ function handleOrientation(event) {
   for (i = 0; i < balls.length; i++) {
     y_px = balls[i].style.top.match(/\d+/);
     x_px = balls[i].style.left.match(/\d+/);
-    //
-    // output.innerHTML += "x: " + x_px + "i: " + i "\n";
-    // output.innerHTML += "y: "+y_px+"\n";
+
+    output.innerHTML += "x: " + x_px + "i: " + i + "\n";
+    output.innerHTML += "y: " + y_px + "\n";
   }
   sleep(1000);
   // var maxX = garden.clientWidth  - balls[i].clientWidth;
