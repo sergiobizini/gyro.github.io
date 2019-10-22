@@ -18,8 +18,8 @@ function handleOrientation(event) {
   output.innerHTML = new Date().getTime() + "\n";
 
   for (i = 0; i < balls.length; i++) {
-    y_px = balls[i].style.top;
-    x_px = balls[i].style.left;
+    y_px = window.getComputedStyle(balls[i]).top;
+    x_px = window.getComputedStyle(balls[i]).left;
 
     output.innerHTML += "x: " + x_px + " i: " + i + "\n";
     output.innerHTML += "y: " + y_px + ":y" +"\n";
