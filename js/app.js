@@ -13,20 +13,17 @@ function sleep(milliseconds){
   }
 }
 
-
+var speed = 1;
 function handleOrientation(event) {
 
   var y = event.beta;  // In degree in the range [-180,180]    up down
   var x = event.gamma; // In degree in the range [-90,90]      left right
 
-  output.innerHTML = new Date().getTime() + "\n";
+  output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top;
 
   for (i = 0; i < balls.length; i++) {
     y_px = parseint(window.getComputedStyle(balls[i]).top.match(/\d+/));
     x_px = parseint(window.getComputedStyle(balls[i]).left.match(/\d+/));
-
-    output.innerHTML += "x: " + x_px + " i: " + i + "\n";
-    output.innerHTML += "y: " + y_px + ":y" +"\n";
 
     if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
       balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
