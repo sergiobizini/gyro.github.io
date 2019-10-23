@@ -22,17 +22,17 @@ function handleOrientation(event) {
 
   output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top+"\n" +"y_px" + parseInt(window.getComputedStyle(balls[i]).top.match(/\d+/),10) + "\n" ;
 
-  for (i = 0; i < balls.length; i++) {
-    y_px = parseInt(window.getComputedStyle(balls[i]).top.match(/\d+/),10);
-    x_px = parseInt(window.getComputedStyle(balls[i]).left.match(/\d+/),10);
+  // for (i = 0; i < balls.length; i++) {
+    y_px = parseInt(window.getComputedStyle(balls[0]).top.match(/\d+/),10);
+    x_px = parseInt(window.getComputedStyle(balls[0]).left.match(/\d+/),10);
 
-    balls[i].style.top  = parseInt(y_px + y*speed,10) + "px";  //200 -100 -5
+    balls[i].style.top  = parseInt(y_px + 10,10) + "px";  //200 -100 -5
 
     // if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
     //   balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
     // } else {
     //   balls[i].style.top = "180px";}
-  }
+  // }
   sleep(1000);
   // var maxX = garden.clientWidth  - balls[i].clientWidth;
   // var maxY = garden.clientHeight - balls[i].clientHeight;
