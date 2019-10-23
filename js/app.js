@@ -4,7 +4,8 @@ var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
 var x_px;
 var y_px;
-
+var x;
+var y;
 
 function sleep(milliseconds){
   var start = new Date().getTime();
@@ -16,19 +17,21 @@ function sleep(milliseconds){
 var speed = 1;
 function handleOrientation(event) {
 
-  var y = event.beta;  // In degree in the range [-180,180]    up down
-  var x = event.gamma; // In degree in the range [-90,90]      left right
+  y = event.beta;  // In degree in the range [-180,180]    up down
+  x = event.gamma; // In degree in the range [-90,90]      left right
 
-  output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top;
+
 
   for (i = 0; i < balls.length; i++) {
     y_px = parseint(window.getComputedStyle(balls[i]).top.match(/\d+/));
     x_px = parseint(window.getComputedStyle(balls[i]).left.match(/\d+/));
 
-    if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
-      balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
-    } else {
-      balls[i].style.top = "180px";}
+    balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
+    output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top+"\n" +"y_px" + y_px + "\n" ;
+    // if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
+    //   balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
+    // } else {
+    //   balls[i].style.top = "180px";}
   }
   sleep(1000);
   // var maxX = garden.clientWidth  - balls[i].clientWidth;
