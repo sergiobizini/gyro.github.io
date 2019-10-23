@@ -20,13 +20,13 @@ function handleOrientation(event) {
   y = event.beta;  // In degree in the range [-180,180]    up down
   x = event.gamma; // In degree in the range [-90,90]      left right
 
-  output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top+"\n" +"y_px" + parseint(window.getComputedStyle(balls[i]).top.match(/\d+/)) + "\n" ;
+  output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top+"\n" +"y_px" + parseInt(window.getComputedStyle(balls[i]).top.match(/\d+/),10) + "\n" ;
 
   for (i = 0; i < balls.length; i++) {
-    y_px = parseint(window.getComputedStyle(balls[i]).top.match(/\d+/));
-    x_px = parseint(window.getComputedStyle(balls[i]).left.match(/\d+/));
+    y_px = parseInt(window.getComputedStyle(balls[i]).top.match(/\d+/),10);
+    x_px = parseInt(window.getComputedStyle(balls[i]).left.match(/\d+/),10);
 
-    balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
+    balls[i].style.top  = parseInt(y_px + y*speed,10) + "px";  //200 -100 -5
 
     // if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
     //   balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
