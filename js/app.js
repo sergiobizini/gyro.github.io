@@ -22,14 +22,14 @@ function handleOrientation(event) {
   output.innerHTML = new Date().getTime() + "\n";
 
   for (i = 0; i < balls.length; i++) {
-    y_px = window.getComputedStyle(balls[i]).top.match(/\d+/));
-    x_px = window.getComputedStyle(balls[i]).left.match(/\d+/));
+    y_px = parseint(window.getComputedStyle(balls[i]).top.match(/\d+/)));
+    x_px = parseint(window.getComputedStyle(balls[i]).left.match(/\d+/)));
 
     output.innerHTML += "x: " + x_px + " i: " + i + "\n";
     output.innerHTML += "y: " + y_px + ":y" +"\n";
 
     if ((y*speed + y_px < 180) && (y*speed + y_px > 0)){
-      balls[i].style.top  = (0 + y_px + y*speed) + "px";  //200 -100 -5
+      balls[i].style.top  = parseint(y_px + y*speed) + "px";  //200 -100 -5
     } else {
       balls[i].style.top = "180px";}
   }
