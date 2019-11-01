@@ -22,7 +22,7 @@ function handleOrientation(event) {
 
   output.innerHTML = new Date().getTime() + "\n" + window.getComputedStyle(balls[0]).top+"\n" +"y_px" + parseInt(window.getComputedStyle(balls[i]).top.match(/\d+/),10) + "\n" ;
 
-  // for (i = 0; i < balls.length; i++) {
+  for (i = 0; i < balls.length; i++) {
     y_px = parseInt(window.getComputedStyle(balls[0]).top.match(/\d+/),10);
     x_px = parseInt(window.getComputedStyle(balls[0]).left.match(/\d+/),10);
 
@@ -81,7 +81,7 @@ function handleOrientation(event) {
   // }
   // sleep(1000);
 
-// }
+}
 }
 
 window.addEventListener('deviceorientation', handleOrientation, true);
